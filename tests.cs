@@ -32,4 +32,17 @@ static async Task PrepararBatata()
     WriteLine("Batata pronta!");
 }
 
-Main(); // Chamada do método Main para iniciar a execução do programa, porém sem aguardar sua conclusão, pois Main é um método assíncrono.
+try
+{
+await Main(); // Chamada do método Main para iniciar a execução do programa, porém sem aguardar sua conclusão, pois Main é um método assíncrono.
+}
+
+catch (Exception ex)
+{
+    WriteLine($"Ocorreu um erro: {ex.Message}");
+}
+
+finally
+{
+    WriteLine("Execução finalizada.");
+}
